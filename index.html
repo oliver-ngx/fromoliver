@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post-Exam Surprise</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        input {
+            padding: 10px;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 80%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="question">
+        <h2>Could you complete the missing part 👀</h2>
+        <p><strong>Bano Ahmed Rajput</strong></p>
+        <input type="text" id="answer" placeholder="Type here...">
+        <br>
+        <button onclick="checkAnswer()">Submit</button>
+    </div>
+    <div id="gift" class="hidden">
+        <img src="post_exam_message.jpg" alt="Gift Card">
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const input = document.getElementById('answer').value.trim().toLowerCase();
+            if (input === "monica") {
+                document.getElementById('question').classList.add('hidden');
+                document.getElementById('gift').classList.remove('hidden');
+            } else {
+                alert("Hmm... that doesn't seem right. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>
